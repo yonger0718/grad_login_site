@@ -42,7 +42,7 @@ $result = mysqli_fetch_row($data);
 				<table style="background-color: white; ">
 					<tr style="height: 5%; width: 100%;">
 						<th scope="col" class="text-center" style="width: 250px;">
-							<a href="./idle.html" style="font-size: 24px;">首頁</a>
+							<a href="./idle.php" style="font-size: 24px;">首頁</a>
 						</th>
 						<th scope="col" class="text-center" style="width: 300px;">
 							<a href='./user.php' style="font-size: 24px;">使用者</a>

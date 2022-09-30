@@ -7,9 +7,10 @@ $password_hash = password_hash($password, PASSWORD_DEFAULT);
 //prevent attack by hashing
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-	$query = "SELECT * FROM login WHERE username = '".$username"'";
+	$query = "SELECT * FROM `login` WHERE username = '".$username."'";
 	$result = mysqli_query($connection, $query);
-	if(mysqli_num_rows > 0 && $password == mysqli_fetch_row($result)[2]){
+    
+	if(mysqli_num_rows($result) > 0 && $password == mysqli_fetch_row($result)[2]){
 		session_start();
 		//using session to store data
 		$_SESSION["logged"] = true;
