@@ -1,7 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost', 'admin', 'admin');
-mysqli_select_db($connect, 'iot_test');
-mysqli_query($connect, 'set names utf8');
+$connect = require_once("config.php");
 $query = "SELECT * FROM `test` ORDER BY id DESC";
 $data = mysqli_query($connect, $query);
 $result = mysqli_fetch_row($data);
@@ -50,7 +48,7 @@ $result = mysqli_fetch_row($data);
 							<a href='./user.php' style="font-size: 24px;">使用者</a>
 						</th>
 						<th scope="col" class="text-center" style="width: 250px">
-							<a href="./index.html" style="font-size: 24px;">登出</a>
+							<a href="./logout.php" style="font-size: 24px;">登出</a>
 						</th>
 					</tr>
 					<tr style="height: 10px; background-color: white;"></tr>
