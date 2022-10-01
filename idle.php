@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['logged']) || $_SESSION["created"] < (time() - (60*10))){
 	//if haven't logged or session timeout then redirect
-	header('location:./index.php');
+	header('location:./logout.php');
 	exit();
 }
 $connect = require_once("config.php");
