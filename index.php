@@ -1,10 +1,19 @@
-<?
+<?php
 session_start();
+
+if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true){
+	//if already logged will auto redirect
+	if($_SESSION["created"] < time() - (60*10)){ //auto logout after 10m
+		header("location:./logout.php");
+	}
+	header("location:./idle.php");
+	exit; //redirect once only
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>DashBoard</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -46,7 +55,7 @@ session_start();
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="密碼">
+						<input class="input100" type="password" name="password" placeholder="密碼">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 

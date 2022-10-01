@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['logged']) || $_SESSION["created"] < (time() - (60*10))){
+	//if haven't logged or session timeout then redirect
+	header('location:./index.php');
+	exit();
+}
 $connect = require_once("config.php");
 $query = "SELECT * FROM `test` ORDER BY id DESC";
 $data = mysqli_query($connect, $query);
@@ -40,6 +47,7 @@ $result = mysqli_fetch_row($data);
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-logintest p-t-30 p-b-50">
 				<table style="background-color: white; ">
+					<caption>using this form for showing data from sql</caption>
 					<tr style="height: 5%; width: 100%;">
 						<th scope="col" class="text-center" style="width: 250px;">
 							<a href="./idle.php" style="font-size: 24px;">首頁</a>

@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		//using session to store data
 		$_SESSION["logged"] = true;
 		$_SESSION["username"] = mysqli_fetch_row($result)[1];
+        $_SESSION["created"] = time();
         header("location:./idle.php"); // redirection to idle page
 	}else{
         function_alert("Password or username wrong");
