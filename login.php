@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		session_start();
 		//using session to store data
 		$_SESSION["logged"] = true;
-		$_SESSION["username"] = mysqli_fetch_row($result)[1];
+		$_SESSION["username"] = $username;
         $_SESSION["created"] = time();
         header("location:./idle.php"); // redirection to idle page
 	}else{

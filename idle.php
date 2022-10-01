@@ -59,7 +59,11 @@ $result = mysqli_fetch_row($data);
 							<a href="./logout.php" style="font-size: 24px;">登出</a>
 						</th>
 					</tr>
-					<tr style="height: 10px; background-color: white;"></tr>
+					<tr style="height: 20px; background-color: white;">
+						<td class="text-center" style="font-size: 24px;">溫度</td>
+						<td class="text-center" style="font-size: 24px;">濕度</td>
+						<td class="text-center" style="font-size: 24px;">氣體濃度</td>
+					</tr>
 					<tr style="height: 250px; background-color: white;">
 						<td>
 							<img src="./images/hot.png"  width="150" height="150" class="center">
