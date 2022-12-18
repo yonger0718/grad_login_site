@@ -1,5 +1,7 @@
-# grad_login_site
+# senior-project
 
-this repo is for graduation project
+## 菸煙一熄
+
+this repo is for senior project
 
 html template: [here](https://colorlib.com/wp/template/login-form-v16/)
